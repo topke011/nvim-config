@@ -13,6 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.env.JAVA_HOME = '/Users/topke/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home'
 
 require("lazy").setup("plugins")
 require("config.telescope")

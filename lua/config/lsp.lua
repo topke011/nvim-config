@@ -48,6 +48,19 @@ end
 require('mason').setup()
 require('mason-lspconfig').setup()
 
+
+local function on_language_status(_, result, ctx)
+  -- Ignore nil messages.
+  -- if result.message == nil then
+  --     return
+  -- end
+  -- local command = vim.api.nvim_command
+  -- command 'echohl ModeMsg'
+  -- command(string.format('echo "%s"', result.message))
+  -- command 'echohl None'
+end
+
+
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -72,8 +85,10 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
-  jdtls = {}
+  -- jdtls = { }
 }
+
+vim.lsp.set_log_level(0)
 
 require('neodev').setup()
 
@@ -97,7 +112,32 @@ mason_lspconfig.setup_handlers {
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
+  ['jdtls'] = function()
+	require('lspconfig').jdtls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		handlers = {
+			["$/progress"] = vim.schedule_wrap(on_language_status),
+		}
+		})
+	end,
 }
+
+-- local function on_language_status(_, result)
+--   -- Ignore nil messages.
+--   if result.message == nil then
+--       return
+--   end
+--   local command = vim.api.nvim_command
+--   command 'echohl ModeMsg'
+--   command(string.format('echo "%s"', result.message))
+--   command 'echohl None'
+-- end
+-- require('lspconfig').jdtls.setup({
+--     handlers = {
+--         ["$/progress"] = vim.schedule_wrap(on_language_status),
+--     },
+-- })
 
 
 local cmp = require 'cmp'
