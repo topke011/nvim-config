@@ -3,6 +3,8 @@ vim.g.maplocalleader = ' '
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+--vim.opt.autoindent
+--vim.opt.smartindent = true
 
 vim.opt.number = true
 vim.opt.ignorecase = true
