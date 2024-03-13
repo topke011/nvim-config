@@ -4,7 +4,7 @@ return {
 	-- `find_files` or `git_files` depending on whether the
 	-- directory is a git repo.
 	{
-		'nvim-tglescope/telescope.nvim',
+		'nvim-telescope/telescope.nvim',
 		branch = '0.1.x',
 		dependencies = {
 			-- Fuzzy Finder Algorithm which requires local dependencies to be built.
