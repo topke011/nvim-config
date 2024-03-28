@@ -13,9 +13,9 @@ return {
 				},
 				update_focused_file = {
 					enable      = true,
-					update_cwd  = true,
+					-- update_cwd  = true,
 					ignore_list = {},
-					update_root = true
+					-- update_root = true
 				},
 
 			}
@@ -25,3 +25,4 @@ return {
 		}
 	},
 }
+

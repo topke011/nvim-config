@@ -1,10 +1,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
---vim.opt.autoindent
---vim.opt.smartindent = true
+vim.opt.shiftwidth=4
+vim.opt.smarttab=true
+vim.opt.expandtab=true
+vim.opt.tabstop=8
+vim.opt.softtabstop=0
 
 vim.opt.number = true
 vim.opt.ignorecase = true
@@ -16,3 +17,4 @@ vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
+
