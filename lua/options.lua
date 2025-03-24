@@ -18,3 +18,7 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
+vim.opt.undofile = false
+vim.opt.swapfile = false
+
+
